@@ -1,0 +1,192 @@
+.artistImg {
+    width: 40%;
+    height: 100%;
+}
+.imgLayout img {
+    width: 50%;
+}
+.music-page-container{
+    z-index: -111111;
+}
+/*  Counter Section  */
+#counter {    
+    background-color: #f5365c;;
+    color: #fff;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    /*padding: 100px 0;*/
+}
+#counter .count {
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-align: center;
+}
+.count h4 {
+    color: #fff;
+	font-size: 16px;
+	margin-top: 0;
+}
+#counter .count .fa {
+    font-size: 40px;
+    display: block;
+    color: #fff;
+}
+#counter .number {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.modalMusic {
+    border-radius: 1%;
+    background-color: #090919;
+    color: white;
+}
+.modalImgs {
+    overflow: inherit; 
+}
+.socialMedia {
+    background: linear-gradient(135deg, rgba(205,196,14,1) 0%, rgba(235,23,0,1) 49%, rgba(209,24,0,1) 100%);
+    width: 100%;
+    height: 15vh;
+    transform: translateY(-99%);
+   -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    
+    border-radius: 1%;
+}
+/* cards */
+.artist-card-container{
+    display: grid;   
+    grid-gap: 1rem;
+}
+.card{
+    transition: all .7s;
+}
+.card-header{
+    background:#f5365c;;
+    color: white;
+}
+.card-image{
+    width: 40%;
+    border-radius: 45%;
+    height: 5rem;
+}
+.btnModify {
+    text-align-last: center;
+    transform: translateY(-100%);
+    background-color: #f7f7f7;
+    color: #f5365c;;
+    width: 80%;
+    box-shadow: 0 0 5rem #f5365c;;
+    transition: all .2s;
+    border-radius: 24px;  
+}
+.btnModify:hover,.btnModify:focus{
+    transform: translateY(-95%);
+    box-shadow: 0 0 2rem #f5365c;;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .music-container {
+        height: 50vh;
+        /* margin-top: 1.5rem; */
+        color: white;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .music-header {
+        padding: 0.2rem;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 2rem;
+    }
+    .col_1 {
+        /* background: blue; */
+        height: 100%;
+        width: 100%;
+    }
+    .col_2 {
+        height: 100%;
+        width: 100%;
+    }
+    .imgCol2 {
+        transform: translate(-10%, 100%);
+    }
+    .col_3 {
+        height: 100%;
+        width: 100%;
+    }
+    .imgCol1 {
+        grid-row: 3/-1;
+        transform: translateX(20%);
+    }
+    .imgCol3 {
+        grid-row: 2/-2;
+        transform: translate(-10%, -70%);
+    }
+    .imgCol4 {
+        grid-row: 3/-1;
+        transform: translateX(-40%);
+    }
+    .imgCol4-1 {
+        transform: translateY(70%);
+    }
+    .imgCol6 {
+        grid-row: 3/-1;
+        transform: translateX(-80%);
+    }
+    .imgCol6-1 {
+        transform: translateX(15%);
+    }
+    .imgCol8 {
+        grid-row: 3/-1;
+    }
+    .col_4 {
+        height: 100%;
+        width: 100%;
+    }
+    .col_5 {
+        height: 100%;
+        width: 100%;
+    }
+    .col_6 {
+        height: 100%;
+        width: 100%;
+    }
+    .col_7 {
+        height: 100%;
+        width: 100%;
+    }
+    .imgCol7 {
+        transform: translateY(120%);
+    }
+    .col_8 {
+        height: 100%;
+        width: 100%;
+    }
+    .imgLayout {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .imgLayout img {
+        width: 80%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    /* artist cards */
+    .artist-card-container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);   
+        grid-gap: 1rem;
+    }
+    #counter {    
+        padding: 100px 0;
+        /*transform: translateY(31.5%)*/
+    }
+}
+

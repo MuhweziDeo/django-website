@@ -1,0 +1,33 @@
+.contact-buttons-container{
+    display: grid;  
+    grid-gap: 1rem;
+}
+
+.contact-info{
+    background: url(https://images.pexels.com/photos/427900/pexels-photo-427900.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 4rem;
+    color:white;
+
+}
+
+@media (min-width: 768px) {
+
+    .contact-buttons-container{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 1rem;
+    }
+    .contact-info{
+        background: url(https://images.pexels.com/photos/427900/pexels-photo-427900.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 4rem;
+        color:white;
+        -webkit-clip-path: polygon(0 0, 100% 0%, 89% 100%, 0% 100%);
+clip-path: polygon(0 0, 100% 0%, 89% 100%, 0% 100%);
+    }
+}

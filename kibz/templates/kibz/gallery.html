@@ -1,0 +1,150 @@
+{% extends "kibz/base.html" %}
+{% block content %}
+<h1 class="text-center display-5">Gallery</h1>
+<!-- gallery start  -->
+<!-- photo gallery start -->
+<div class="photo-gallery-container container">
+    <h1 class="display-5 text-center">Photo Gallery</h1>
+    {% if gallery_posts %}
+    {% for gallery_post in gallery_posts %}
+    <!-- gallery main -->
+    <div class="gallery m-4">
+        <h1 class="">{{gallery_post.title}}</h1>
+        <div class="row">
+            <a href="{{gallery_post.post_image_1.url}}" data-toggle="lightbox" data-gallery="example-gallery" class="col-md-2">
+                <img src="{{gallery_post.post_image_1.url}}" class="img-fluid shadow-lg gallery-img img-1">
+            </a>
+            <a href="{{gallery_post.post_image_2.url}}" data-toggle="lightbox" data-gallery="example-gallery" class="col-md-2">
+                <img src="{{gallery_post.post_image_2.url}}" class="img-fluid shadow-lg gallery-img img-1">
+            </a>
+            <a href="{{gallery_post.post_image_3.url}}" data-toggle="lightbox" data-gallery="example-gallery" class="col-md-2">
+                <img src="{{gallery_post.post_image_3.url}}" class="img-fluid shadow-lg gallery-img img-1">
+            </a>
+            <a href="{{gallery_post.post_image_4.url}}" data-toggle="lightbox" data-gallery="example-gallery" class="col-md-2">
+                <img src="{{gallery_post.post_image_4.url}}" class="img-fluid shadow-lg gallery-img img-1">
+            </a>
+            <a href="{{gallery_post.post_image_5.url}}" data-toggle="lightbox" data-gallery="example-gallery" class="col-md-2">
+                <img src="{{gallery_post.post_image_5.url}}" class="img-fluid shadow-lg gallery-img img-1">
+            </a>
+            <a href="{{gallery_post.post_image_6.url}}" data-toggle="lightbox" data-gallery="example-gallery" class="col-md-2">
+                <img src="{{gallery_post.post_image_6.url}}" class="img-fluid shadow-lg gallery-img img-1">
+            </a>
+            <a href="{{gallery_post.post_image_7.url}}" data-toggle="lightbox" data-gallery="example-gallery" class="col-md-2">
+                <img src="{{gallery_post.post_image_7.url}}" class="img-fluid shadow-lg gallery-img img-1">
+            </a>
+
+        </div>
+        {% endfor %}
+        <!-- pagination -->
+        <div class="pagination pt-4 font-weight-bold">
+            <span class="step-links">
+                {% if gallery_posts.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ gallery_posts.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="current">
+                    Page {{ gallery_posts.number }} of {{ gallery_posts.paginator.num_pages }}.
+                </span>
+                {% if gallery_posts.has_next %}
+                <a href="?page={{ gallery_posts.next_page_number }}">next</a>
+                <a href="?page={{ gallery_posts.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+        <!-- pagination end -->
+    </div>
+    <!-- gallery main end -->
+
+    {% else %}
+    <!-- gallery main -->
+    <div class="gallery m-4">
+        <h1>Title 1</h1>
+        <div class="row">
+            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid shadow-lg">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid shadow-lg">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid shadow-lg">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid shadow-lg">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid shadow-lg">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid shadow-lg">
+            </a>
+        </div>
+    </div>
+    <!-- gallery main end -->
+    <!-- gallery main start -->
+    <div class="gallery mt-4">
+        <h1>Title 1</h1>
+        <div class="row">
+            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid shadow-lg">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid shadow-lg">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid shadow-lg">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid shadow-lg">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid shadow-lg">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery"
+                class="col-md-2">
+                <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid shadow-lg">
+            </a>
+        </div>
+    </div>
+    <!-- gallery main end -->
+</div>
+<!-- photo gallery end -->
+{% endif %}
+<!-- vido gallery start -->
+<div class="video-gallery-container container mt-4">
+    <h1 class="text-center">Videos</h1>
+    <div class="video-gallery shadow-lg">
+        
+       
+        {% for video in video_galleries %}
+        <h1 class="display-5 text-center"> {{video.title}}</h1>
+               
+        <div class="video-items">
+            <iframe width="300" height="315" src="{{video.video_1}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen ></iframe>
+
+
+            <iframe width="300" height="315" src="{{video.video_2}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen ></iframe>
+
+            <iframe width="300" height="315" src="{{video.video_3}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        {% endfor %}
+        </div>
+        
+    </div>
+</div>
+<!-- video gallery end -->
+<!-- gallery end -->
+{% endblock content %}

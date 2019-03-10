@@ -1,0 +1,22 @@
+.service-img{
+    transition: transform .2s;
+}
+.service-img:hover{
+    transform: scale(0.8);
+    box-shadow: 0 0  1.5rem black;
+}
+.skills-section {
+    width: 100%; /* Full width */
+  /* Grey background */
+}
+.skills {
+    text-align: right; /* Right-align text */
+    padding: 10px; /* Add some padding */
+    color: white; /* White text color */
+}
+
+.online-marketing {width: 90%; background-color: #4CAF50;} /* Green */
+.marchandising {width: 80%; background-color: #2196F3;} /* Blue */
+.promotions {width: 65%; background-color: #f44336;} /* Red */
+.exhibitions {width: 60%; background-color: #808080;} /* Dark Grey */
+.road-shows{width: 80%;background: blue;}

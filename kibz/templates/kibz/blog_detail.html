@@ -1,0 +1,120 @@
+{% extends "kibz/base.html" %}
+{% block content %}
+<!-- blog section detail -->
+<!-- Section: Magazine v.2 -->
+<section class="magazine-section my-5 container">
+
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center my-5">{{blog_post.title}}</h2>
+    <!-- Section description -->
+    <p class="text-center dark-grey-text w-responsive mx-auto mb-5"></p>
+
+    <!-- Grid row -->
+    <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-lg-8 col-md-12">
+            <!-- Featured news -->
+            <div class="single-news mb-lg-0 mb-4">
+                <!-- Image -->
+                <div class="view overlay rounded z-depth-1-half mb-4">
+                    <div class="row ">
+                        <div class="col-md-10">
+                            <div class="row mb-4">
+                                <a href="{{blog_post.post_image_1.url}}" data-toggle="lightbox"
+                                    data-gallery="example-gallery" class="col-sm-4">
+                                    <img src="{{blog_post.post_image_1.url}}" class="img-fluid img-thumbnail shadow-lg">
+                                </a>
+                                <a href="{{blog_post.post_image_2.url}}" data-toggle="lightbox"
+                                    data-gallery="example-gallery" class="col-sm-4">
+                                    <img src="{{blog_post.post_image_2.url}}" class="img-fluid img-thumbnail shadow-lg">
+                                </a>
+                                <a href="{{blog_post.post_image_3.url}}" data-toggle="lightbox"
+                                    data-gallery="example-gallery" class="col-sm-4">
+                                    <img src="{{blog_post.post_image_3.url}}" class="img-fluid img-thumbnail shadow-lg">
+                                </a>
+                            </div>
+                            <div class="row">
+                                <a href="{{blog_post.post_image_4.url}}" data-toggle="lightbox"
+                                    data-gallery="example-gallery" class="col-sm-4">
+                                    <img src="{{blog_post.post_image_4.url}}" class="img-fluid img-thumbnail shadow-lg">
+                                </a>
+                                <a href="{{blog_post.post_image_5.url}}" data-toggle="lightbox"
+                                    data-gallery="example-gallery" class="col-sm-4">
+                                    <img src="{{blog_post.post_image_5.url}}" class="img-fluid img-thumbnail shadow-lg">
+                                </a>
+                                <a href="{{blog_post.post_image_6.url}}" data-toggle="lightbox"
+                                    data-gallery="example-gallery" class="col-sm-4">
+                                    <img src="{{blog_post.post_image_6.url}}" class="img-fluid img-thumbnail shadow-lg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data -->
+                <div class="news-data d-flex justify-content-between">
+                    <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>Posted On: {{blog_post.created_on}}</p>
+                </div>
+
+                <!-- Excerpt -->
+                <h3 class="font-weight-bold dark-grey-text mb-3"><a>{{blog_post.title}}</a></h3>
+                <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">{{blog_post.description}}</p>
+            </div>
+            <!-- Featured news -->
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-12 shadow-lg p-4 recent-posts" style="background:aquamarine;">
+            <h3>Recent Posts</h3>
+            <!-- Small news -->
+            <div class="single-news mb-4">
+                {% if recent_posts %}
+                {% for recent_post  in recent_posts  %}
+                    <!-- Recent POST START-->
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-3">
+
+                            <!--Image-->
+                            <div class="view overlay rounded z-depth-1 mb-4">
+                                <img class="img-fluid view zoom" src="{{recent_post.post_image_1.url}}"
+                                    alt="Sample image">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-9">
+
+                            <!-- Excerpt -->
+                            <p class="font-weight-bold dark-grey-text">{{recent_post.created_on}}</p>
+                            <div class="d-flex justify-content-between">
+                                <div class="col-11 text-truncate pl-0 mb-3">
+                                    <a href="{% url 'blog_detail' recent_post.pk %}" class="dark-grey-text">{{recent_post.title}}</a>
+                                </div>
+                                <a><i class="fa fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->                
+                {% endfor %}
+            </div>
+            <!-- Small news -->
+            <!-- Recent POST END-->
+                {% else %}
+                    <h1>No Posts Added Yet<h1>
+                {% endif %}
+        </div>
+        <!--Grid column-->
+    </div>
+    <!-- Grid row -->
+</section>
+<!-- blog section detail end -->
+{% endblock content %}

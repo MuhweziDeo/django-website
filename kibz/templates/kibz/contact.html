@@ -1,0 +1,143 @@
+{% extends "kibz/base.html" %}
+{% block content %}
+	<!-- contact page -->
+	<div class="contact-page-container">
+		<section class="intro-contact map p-0 container">
+			<h1 class="display-5 text-center">HAVE A QUESTION? WE HAVE</h1>
+			<h1 class="display-5 text-center">ANSWERS!</h1>
+			<div class="contact-buttons-container text-center p-5">
+				<!-- regular map -->
+				<div class="contact-button-1  shadow-lg p-5">
+					<i class="fas fa-2x fa-map-marker-alt p-4"></i><br>
+					<button type="button" class="btn btn-info  animated slideInLeft slow " data-toggle="modal" data-target="#modalRegular">Regular
+					map</button>
+					<div class="modal fade" id="modalRegular" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-lg" role="document">
+							<!--Content-->
+							<div class="modal-content">
+								<!--Body-->
+								<div class="modal-body mb-0 p-0">
+									<!--Google map-->
+									<div id="map-container-9" class="z-depth-1-half" style="height: 400px">
+										<div class="mapouter">
+											<div class="gmap_canvas"><iframe width="886" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=kibz%20vision&t=&z=15&ie=UTF8&iwloc=&output=embed"
+												frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">pure black</a></div>
+												<style>.mapouter{text-align:right;height:300px;width:886px;}.gmap_canvas {background:none!important;height:300px;width:886px;}</style>
+											</div>
+										</div>
+									</div>
+									<!--Footer-->
+									<div class="modal-footer justify-content-center">
+										<button type="button" class="btn btn-danger btn-md">Save location <i class="fa fa-map-marker ml-1"></i></button>
+										<button type="button" class="btn btn-outline-info btn-md" data-dismiss="modal">Close <i class="fa fa-times ml-1"></i></button>
+									</div>
+								</div>
+								<!--/.Content-->
+							</div>
+						</div>
+						<!--Modal: Name-->
+					</div>
+					<!-- regular map end -->
+					<!-- statelite map start -->
+					<div class="contact-button-2 shadow-lg  p-5 ">
+						<i class="fas fa-2x fa-map-marker-alt p-4"></i><br>
+						<button type="button" class="btn btn-info animated fadeInDown slow" data-toggle="modal" data-target="#modalSatellite">Satellite
+						map
+						</button>
+						<!--Modal: Name-->
+						<div class="modal fade" id="modalSatellite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg" role="document">
+								<!--Content-->
+								<div class="modal-content">
+									<!--Body-->
+									<div class="modal-body mb-0 p-0">
+										<!--Google map-->
+										<div id="map-container-10" class="z-depth-1-half" style="height: 400px">
+											<div class="mapouter">
+												<div class="gmap_canvas"><iframe width="886" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=kibz%20vision&t=k&z=15&ie=UTF8&iwloc=&output=embed"
+													frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">pure black</a></div>
+													<style>.mapouter{text-align:right;height:500px;width:886px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:886px;}</style>
+												</div>
+											</div>
+										</div>
+										<!--Footer-->
+										<div class="modal-footer ">
+											<button type="button" class="btn btn-default btn-md">Save location <i class="fa fa-map-marker ml-1"></i></button>
+											<button type="button" class="btn btn-outline-default btn-md" data-dismiss="modal">Close <i class="fa fa-times ml-1"></i></button>
+										</div>
+									</div>
+									<!--/.Content-->
+								</div>
+							</div>
+							<!--Modal: Name-->
+						</div>
+						<!-- satelite map end -->
+						<div class="contact-button-3 shadow-lg p-5 ">
+							<i class="fab fa-2x fa-facebook-messenger p-4"></i><br>
+							<button class="btn btn-info animated slideInRight slow">Message us on Facebook</button>
+						</div>
+					</div>
+				</section>
+			</div>
+			<section class="contact-form-container container shadow-lg animated slideInLeft slow">
+				<div class="row">
+					<div class="col-md-5 contact-info display-5">
+						<p>Plot 1299 Bukoto Frobel, Nsimbiziwome
+							kampala, Uganda
+							<p>
+								<p>Email: info@kibzvision.com
+									
+								</p>
+								<p>Phone: +256 (0) 414-694 589</p>
+								<p>Mobile: +256 (0) 752-666 881</p>
+							</div>
+							<div class="col-md-7 contact-form">
+								<!-- Material form contact -->
+								<div class="form">
+									<h5 class="display-5 text-center py-4">
+									<strong>Contact us</strong>
+									</h5>
+									<!--Card content-->
+									<div class="card-body px-lg-5 pt-0">
+										<!-- Form -->
+										<form method="POST" class="text-center form-group" style="color: #757575;">
+											{% csrf_token %}
+											<!-- Name -->
+											<div class="md-form mt-3">
+												<input type="text" id="materialContactFormName" class="form-control" name='name' required="">
+												<label for="materialContactFormName">Name</label>
+											</div>
+											<!-- E-mail -->
+											<div class="md-form">
+												<input type="email" id="materialContactFormEmail" class="form-control" name="email" required="">
+												<label for="materialContactFormEmail">E-mail</label>
+											</div>
+											<!-- subject -->
+											<div class="md-form">
+												<input id="materialContactFormEmail" class="form-control" name="subject">
+												<label for="materialContactFormEmail">Subject</label>
+											</div>
+											<!--Message-->
+											<div class="md-form">
+												<textarea type="text" id="materialContactFormMessage" name="message" class="form-control md-textarea" rows="3"></textarea>
+												<label for="materialContactFormMessage">Message</label>
+											</div>
+											<!-- Send button -->
+											<button type="submit" class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
+										</form>
+										<!-- Form -->
+										{% if messages %}
+											<div class="messages">
+												{% for message in messages %}
+													<li {% if message.tags %} class="{{ message.tags }} alert alert-success alert-dismissible fade show" role="alert" {% endif %} >{{ message }}</li>
+												{% endfor %}
+											</div>
+										{% endif %}
+									</div>
+								</div>
+								<!-- Material form contact -->
+							</div>
+						</div>
+					</section>
+					<!-- contact page end -->
+				{% endblock content %}

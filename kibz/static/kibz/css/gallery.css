@@ -1,0 +1,9 @@
+
+@media (min-width: 768px) {
+    .video-items{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 2rem;
+        padding: 1rem;
+    }
+}
